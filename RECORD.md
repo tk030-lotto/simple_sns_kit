@@ -18,6 +18,11 @@ simple_sns_kit (業務用SNSシステム - ブラウザ完結版)
 3. **管理ダッシュボード・認証画面の改修 (`src/app/admin/page.tsx`, `src/app/verify/page.tsx`)**:
    - 合言葉の発行・管理、メンバー権限変更、削除、監査ログ閲覧がすべてローカルで動作。
    - 合言葉によるグループ参加および有効期限延長をローカルストレージ内で安全に処理。
-4. **検証とビルド確認**:
+4. **不要ファイルの整理・削除**:
+   - 旧Supabase関連スクリプト（`make_idempotent.js`, `schema.sql`）、過去パイプラインログ（`ai_pipeline/`）、重複ドキュメント（`docs/`）等を削除し、クリーンなリポジトリ構成へ最適化。
+5. **ドキュメント類の改定**:
+   - `README.md`, `README_SIMPLE.md` をブラウザ完結型（Zero-Network / 0円運用）の仕様に全面改定。MITライセンス表記・著作権表示を整備。
+6. **検証とリポジトリ管理**:
+   - `node check-no-network.js` による外部通信完全遮断（Zero-Network）の合格を確認。
    - `npm run build` による静的ビルド・型チェック・コンパイルの正常終了を確認。
-   - 外部通信完全遮断（Zero-Network）の安全設計を確立。
+   - GitHub プライベートリポジトリ（`tk030-lotto/simple_sns_kit`）の作成およびPush完了。

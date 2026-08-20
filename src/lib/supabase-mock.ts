@@ -48,7 +48,7 @@ export function initMockStore() {
           user_name: '一般ユーザー (山田)',
           avatar_url: 'https://api.dicebear.com/7.x/initials/svg?seed=User',
           content: '承知いたしました！UIの動作も非常にスムーズです。画像をテスト添付してみます。',
-          media_urls: ['https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&auto=format&fit=crop'],
+          media_urls: [],
           created_at: new Date(Date.now() - 1800000).toISOString(),
         }
       ],
@@ -360,10 +360,7 @@ export function createMockSupabase() {
           return { data: { path: filePath }, error: null };
         },
         getPublicUrl: (filePath: string) => {
-          const isDoc = filePath.endsWith('.pdf') || filePath.endsWith('.txt') || filePath.endsWith('.zip');
-          const mockUrl = isDoc 
-            ? ('https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf')
-            : ('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop');
+          const mockUrl = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="%2338bdf8"/></svg>';
           return { data: { publicUrl: mockUrl } };
         }
       })
